@@ -71,7 +71,7 @@ echo  "-+-----------------------------+-" >> log.txt
 case $choix in
 
 1) 
-choixfreqtx
+Saisie_Date
 ;;
 
 2) 
