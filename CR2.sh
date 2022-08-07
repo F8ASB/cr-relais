@@ -1,4 +1,8 @@
-whiptail --title "Carnet de Bord Relais F1ZBV" --msgbox " Entrez la date, les intervenants et le contenu de l'intervention. Vous pourrez également visualisez les interventions précédentes. Ok pour continuer" 15 60
+
+#!/bin/sh
+DIALOG=${DIALOG=dialog}
+
+whiptail --title "Carnet de Bord Relais F1ZBV" --msgbox " Entrez la date, les intervenants et le contenu de l'intervention. Vous pou>
 
 while : ; do
 
@@ -17,14 +21,19 @@ fi
 
 Saisie_Date()
 {
-  Date=$(dialog --calendar calendrier 4 40)
-if [ $exitstatus = 0 ]; then
-    echo $Date
-    Liste_Intervenants
-else
-    echo "Vous avez annulé"
-fi
+Date=`$DIALOG --stdout --title "CALENDRIER" --calendar "Choisissez une date..." 0 0 `
+
+case $? in
+  0)
+        Liste_Intervenants;;
+  1)
+        echo "Appuyé sur Annuler.";;
+  255)
+        echo "Fenêtre fermée.";;
+esac
 }
+
+
 
 Liste_Intervenants()
 {
@@ -38,28 +47,27 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
     Intervention
 
-else
-    echo "Vous avez annulé"
+else   echo "Vous avez annulé"
 fi
 }
 
 Intervention()
 
 {
-Inter=$(dialog --inputbox "Description de l'intervention?" 8 39 --title "Description" 3>&1 1>&2 2>&3)
+Inter=$(whiptail --inputbox "Description de l'intervention?" 8 39 --title "Description" 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     echo "Description " $Inter
-    Ecriture_fichier
+
 else
     echo "User selected Cancel."
 fi
+Ecriture_fichier
 }
 
 
 Ecriture_fichier()
-
 {
 echo  $Date >> log.txt
 echo  $Inter >> log.txt
@@ -67,6 +75,10 @@ echo  $intervenants|tr -d '"' >> log.txt
 echo  "-+-----------------------------+-" >> log.txt
 }
 
+Voir_Fichier()
+{
+dialog --textbox log.txt 50 100
+}
 
 case $choix in
 
@@ -75,7 +87,7 @@ Saisie_Date
 ;;
 
 2) 
-echo "en cours"
+Voir_Fichier
 ;;
 
 esac
