@@ -75,8 +75,7 @@ Saisie_Date
 ;;
 
 2) 
-pkill spotnik2hmi
-ecrituredra
+echo "en cours"
 ;;
 
 esac
