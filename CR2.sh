@@ -77,7 +77,7 @@ echo  "-+-----------------------------+-" >> log.txt
 
 Voir_Fichier()
 {
-dialog --textbox log.txt 50 100
+dialog --tailbox log.txt 50 100
 }
 
 case $choix in
