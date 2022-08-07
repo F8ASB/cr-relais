@@ -2,7 +2,7 @@
 #!/bin/sh
 DIALOG=${DIALOG=dialog}
 
-whiptail --title "Carnet de Bord Relais F1ZBV" --msgbox " Entrez la date, les intervenants et le contenu de l'intervention. Vous pou>
+whiptail --title "Carnet de Bord Relais F1ZBV" --msgbox " Entrez la date, les intervenants et le contenu de l'intervention.                              Vous pourrez également visualisez les interventions précédentes.                                                 Ok pour continuer" 15 60
 
 while : ; do
 
