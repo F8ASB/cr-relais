@@ -19,7 +19,7 @@ _Par exemple:_ `cp cr-relais.sh en cr`
 
 Il suffira ensuite de taper la commande depuis n'importe où.
 
-La liste des intervenants est modifiable directement sur le code.
+La liste des intervenants est modifiable directement dans le code.
 
 **_Quelques captures d'écrans:_**
 
