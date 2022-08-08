@@ -39,4 +39,6 @@ Ecrire le compte rendu
 ![](http://blog.f8asb.com/wp-content/uploads/2022/08/cr05.png)
 Voici l'aperçu des comptes-rendus enregistrés
 
-Selectionner avec la barre espace, deplacer vous avec la touche Tabulation ou les flèches.
+Sélectionnez avec la barre espace, déplacer vous avec la touche Tabulation ou les flèches.
+
+
