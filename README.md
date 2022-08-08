@@ -41,4 +41,6 @@ Voici l'aperçu des comptes-rendus enregistrés
 
 Sélectionnez avec la barre espace, déplacer vous avec la touche Tabulation ou les flèches.
 
+Lien de l'article associé:
+[](: http://blog.f8asb.com/2022/08/08/script-shell-pou…ervention-relais/)
 
